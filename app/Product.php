@@ -9,5 +9,5 @@ class Product extends Model
 {
     use Notifiable;
 
-    protected $fillable = [''];
+    protected $fillable = ['name', 'description', 'price'];
 }
