@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@launchIndexView');
+
+Route::get('/login', 'PageController@launchLoginView');
+
+Route::get('/register', 'PageController@launchRegisterView');
