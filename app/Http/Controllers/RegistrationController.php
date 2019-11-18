@@ -19,7 +19,7 @@ class RegistrationController extends Controller
             'birthday' => 'required'
         ]);
 
-        $user = User::create(request(['name', 'email', 'password', 'birtday']));
+        $user = User::create(request(['name', 'email', 'password', 'birthday']));
 
         auth()->login($user);
 
