@@ -11,8 +11,20 @@
 |
 */
 
+// PageController
+
 Route::get('/', 'PageController@launchIndexView');
 
-Route::get('/login', 'PageController@launchLoginView');
+// SessionController
 
-Route::get('/register', 'PageController@launchRegisterView');
+Route::get('/login', 'SessionController@create');
+
+Route::post('/login', 'SessionController@store');
+
+Route::get('/logout', 'SessionController@destroy');
+
+// RegistrationController
+
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
