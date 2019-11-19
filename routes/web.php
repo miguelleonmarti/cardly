@@ -28,3 +28,11 @@ Route::get('/logout', 'SessionController@destroy');
 Route::get('/register', 'RegistrationController@create');
 
 Route::post('/register', 'RegistrationController@store');
+
+// SuggestionController
+
+Route::get('/suggestion', 'SuggestionController@create');
+
+Route::post('/suggestion', 'SuggestionController@store');
+
+Route::delete('/suggestion', 'SuggestionController@destroy'); // TODO: falta usarlo

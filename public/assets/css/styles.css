@@ -1,0 +1,23 @@
+.container.index-page {
+  text-align: center;
+  margin: auto;
+  /*margin-top: 25px;*/
+}
+
+#wellcome {
+  max-width: 100vh;
+  margin: 0 auto;
+}
+
+.col-sm-12.offset-sm-0.tarjeta.columna {
+  margin: auto;
+}
+
+#tarjeta_columna {
+  margin-top: 10px;
+}
+
+.col.tarjet_columna {
+  width: 100%;
+}
+

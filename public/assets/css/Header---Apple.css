@@ -13,3 +13,12 @@
   font-size: 13px;
 }
 
+.text-center.bono-text {
+  color: white;
+  /*text-size-adjust: 10px;*/
+}
+
+.titulo-bono {
+  font-size: 25px;
+}
+
