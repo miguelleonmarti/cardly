@@ -42,11 +42,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <!--<ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">First element</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">Second element</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">Third element</a></li>
-                    </ul>-->
+                    @if(auth()->check())
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">My cards</a></li>
+                        @if(auth()->user()->email == 'admin@admin.com')
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">Management mode (only admin)</a></li>
+                        @endif
+                    </ul>
+                    @endif
                     <ul class="nav navbar-nav ml-auto">
                         @if (auth()->check())
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">{{ auth()->user()->email }}</a></li>

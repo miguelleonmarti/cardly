@@ -14,7 +14,7 @@ class RegistrationController extends Controller
     public function store() {
         $this->validate(request(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required_with:password_confirmation|same:password_confirmation',
             'birthday' => 'required'
         ]);
