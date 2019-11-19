@@ -30,7 +30,7 @@
             <textarea class="form-control" rows="auto" style="resize: none;" name="message" id="message" placeholder="Message..." required></textarea>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+            <button class="btn btn-primary btn-block" type="submit">Send</button>
         </div>
     </form>
 </div>

@@ -36,3 +36,9 @@ Route::get('/suggestion', 'SuggestionController@create');
 Route::post('/suggestion', 'SuggestionController@store');
 
 Route::delete('/suggestion', 'SuggestionController@destroy'); // TODO: falta usarlo
+
+// BalanceController
+
+Route::get('/balance', 'BalanceController@create');
+
+Route::post('/balance', 'BalanceController@show');

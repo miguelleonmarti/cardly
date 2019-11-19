@@ -28,7 +28,7 @@
                 <div class="box"><i class="la la-money icon"></i>
                     <h3 class="name">Saldo de tarjeta</h3>
                     <p class="description">Consulta de saldo en nuestros distintos bonos de transporte.</p><a
-                        class="learn-more" href="#">Continuar »</a>
+                        class="learn-more" href="/balance">Continuar »</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
