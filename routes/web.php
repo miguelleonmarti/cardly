@@ -41,4 +41,9 @@ Route::delete('/suggestion', 'SuggestionController@destroy'); // TODO: falta usa
 
 Route::get('/balance', 'BalanceController@create');
 
-Route::post('/balance', 'BalanceController@show');
+Route::post('/balance', 'BalanceController@show'); // TODO: POST o GET?
+
+// RechargeController
+
+Route::get('/recharge', 'RechargeController@create');
+

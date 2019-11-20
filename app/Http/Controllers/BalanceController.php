@@ -12,8 +12,15 @@ class BalanceController extends Controller
     }
 
     public function show(Request $request) {
-        $balance = Card::findOrFail($request->id)->balance;
-        // TODO: tratamiento de excepciones
-        dd($balance); // mal hecho
+        $id = $request->input('id');
+
+        $this->validate(request(), [
+            'id' => 'exists:cards,id'
+        ]);
+
+        $balance = Card::findOrFail($id)->balance;
+        return view('balance')
+            ->with('balance', $balance)
+            ->with('id', $id);
     }
 }

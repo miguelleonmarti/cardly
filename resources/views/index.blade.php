@@ -14,7 +14,7 @@
                 <div class="box"><i class="fa fa-credit-card icon"></i>
                     <h3 class="name">Recargar de bonos</h3>
                     <p class="description">Aquí podremos recargar el saldo de los distintos bonos de los que dispongamos
-                    </p><a class="learn-more" href="#">Continuar »</a>
+                    </p><a class="learn-more" href="/recharge">Continuar »</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
