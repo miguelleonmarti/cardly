@@ -51,7 +51,7 @@
         </div>
         @if (isset($balance) && isset($id))
         <div>
-            Card balance with {{ $id }} identifier: ${{ $balance }}
+            Balance of card with {{ $id }} identifier: ${{ $balance }}
         </div>
         @endif
     </form>

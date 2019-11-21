@@ -17,7 +17,7 @@ Route::get('/', 'PageController@launchIndexView');
 
 // SessionController
 
-Route::get('/login', 'SessionController@create');
+Route::get('/login', ['as' => 'login', 'uses' => 'SessionController@create']);
 
 Route::post('/login', 'SessionController@store');
 
@@ -47,3 +47,12 @@ Route::post('/balance', 'BalanceController@show'); // TODO: POST o GET?
 
 Route::get('/recharge', 'RechargeController@create');
 
+// ManagementController
+
+Route::get('/management', 'ManagementController@create');
+
+Route::delete('/user/{id}', 'ManagementController@destroyUser');
+
+Route::delete('/type/{id}', 'ManagementController@destroyType');
+
+Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');

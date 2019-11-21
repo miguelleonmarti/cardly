@@ -46,7 +46,7 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">My cards</a></li>
                         @if(auth()->user()->email == 'admin@admin.com')
-                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="#">Management mode (only admin)</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;" href="/management">Management mode (only admin)</a></li>
                         @endif
                     </ul>
                     @endif
