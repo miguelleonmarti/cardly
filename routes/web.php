@@ -56,3 +56,17 @@ Route::delete('/user/{id}', 'ManagementController@destroyUser');
 Route::delete('/type/{id}', 'ManagementController@destroyType');
 
 Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');
+
+// WebstoreController
+
+Route::delete('/remove/{id}', 'WebstoreController@removeFromCart');
+
+Route::post('/add/{id}', 'WebstoreController@addToCart');
+
+Route::delete('/destroy', 'WebstoreController@destroyCart');
+
+// PaypalController
+
+Route::get('/checkout', 'PaypalController@payWithpaypal'); // TODO: change by POST
+
+Route::get('/status', 'PaypalController@getPaymentStatus');

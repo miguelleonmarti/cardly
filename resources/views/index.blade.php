@@ -6,6 +6,25 @@
 
 <div class="features-boxed">
     <div class="container">
+
+        @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success') }}
+            @php
+            Session::forget('success');
+            @endphp
+        </div>
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-warning" uk-alert>
+            {{ Session::get('error') }}
+            @php
+            Session::forget('error');
+            @endphp
+        </div>
+        @endif
+
         <div class="intro">
             <h2 class="text-center">Cardly</h2>
         </div>

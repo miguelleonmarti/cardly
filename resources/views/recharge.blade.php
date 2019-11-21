@@ -20,7 +20,11 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li>{{ $type->description }}</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-outline-primary btn-block align-self-center mt-auto">Buy</button>
+        <form action="/add/{{ $type->id }}" method="POST" style="all: unset;">
+            @csrf
+            <button type="submit" class="btn btn-lg btn-outline-primary btn-block align-self-center mt-auto">Add to cart</button>
+
+        </form>
       </div>
     </div>
     @endforeach
