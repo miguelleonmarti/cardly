@@ -48,7 +48,7 @@
                     @if(auth()->check())
                     <ul class="nav navbar-nav">
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
-                                href="#">My cards</a></li>
+                                href="/mycards">My cards</a></li>
                         @if(auth()->user()->email == 'admin@admin.com')
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
                                 href="/management">Management mode (only admin)</a></li>
@@ -117,6 +117,7 @@
                                         </table>
                                     </div>
                                     <div class="modal-footer">
+                                        @if(Cart::count() != 0)
                                         <!-- Clear shopping cart button -->
                                         <form action="/destroy" method="POST" style="all:unset;">
                                             @csrf
@@ -125,9 +126,9 @@
                                                 Empty
                                             </button>
                                         </form>
-
                                         <!-- Proceed to checkout button -->
                                         <a href="/checkout" class="btn btn-primary">Checkout</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

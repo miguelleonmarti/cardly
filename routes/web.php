@@ -70,3 +70,7 @@ Route::delete('/destroy', 'WebstoreController@destroyCart');
 Route::get('/checkout', 'PaypalController@payWithpaypal'); // TODO: change by POST
 
 Route::get('/status', 'PaypalController@getPaymentStatus');
+
+// CardController
+
+Route::get('/mycards', 'CardController@create');

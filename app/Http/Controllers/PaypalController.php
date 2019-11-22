@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Card;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Input;
 use PayPal\Api\Amount;
@@ -69,7 +70,7 @@ class PaypalController extends Controller
         foreach (Cart::content() as $item) {
             $items[] = (new Item())
                 ->setName($item->name)
-                ->setCurrency('USD')
+                ->setCurrency('USD') // Euro: EUR
                 ->setQuantity($item->qty)
                 ->setPrice($item->price);
         }
@@ -160,6 +161,14 @@ class PaypalController extends Controller
                 $suborder->price = $item->price;
                 $suborder->quantity = $item->qty;
                 $suborder->save();
+
+                for ($i = 0; $i < $item->qty; $i++) {
+                    $card = new Card();
+                    $card->user_id = auth()->user()->getAuthIdentifier();
+                    $card->type_id = $item->id;
+                    $card->balance = $item->price;
+                    $card->save();
+                }
             }
             Cart::destroy();
             Session::put('success', 'Your payment was successful. Thank you.');

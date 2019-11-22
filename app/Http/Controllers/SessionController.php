@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 
 class SessionController extends Controller
@@ -25,6 +26,8 @@ class SessionController extends Controller
     public function destroy()
     {
         auth()->logout();
+
+        \Cart::destroy();
 
         return redirect()->to('/');
     }
