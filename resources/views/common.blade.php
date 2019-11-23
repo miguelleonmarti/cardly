@@ -45,16 +45,26 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    @if(auth()->check())
                     <ul class="nav navbar-nav">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
+                                href="/recharge">Recharge</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
+                                href="/balance">Balance</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
+                                href="/suggestion">Support</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
+                                href="/schedule">Schedule</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
+                                href="/metroguagua">Metroguagua</a></li>
+                        @if(auth()->check())
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
                                 href="/mycards">My cards</a></li>
                         @if(auth()->user()->email == 'admin@admin.com')
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
-                                href="/management">Management mode (only admin)</a></li>
+                                href="/management">Management</a></li>
+                        @endif
                         @endif
                     </ul>
-                    @endif
                     <ul class="nav navbar-nav ml-auto">
                         @if (auth()->check())
                         <li class="nav-item" role="presentation"><a class="nav-link active" style="font-size: 18px;"
@@ -97,7 +107,13 @@
                                                 <tr>
                                                     <td>
                                                         <!-- Remove product button -->
-                                                        <a href="#">x</a>
+                                                        <form action="/remove" method="POST" style="all:unset;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="hidden" name="rowId" id="rowId"
+                                                                value="{{ $cartItem->rowId }}">
+                                                            <button type="submit" class="btn btn-danger">x</button>
+                                                        </form>
                                                     </td>
                                                     <td>{{ $cartItem->name }}</td>
                                                     <td>{{ $cartItem->qty }}</td>
@@ -111,7 +127,8 @@
                                                     <td></td>
                                                     <td></td>
                                                     <!-- Total price of whole cart -->
-                                                    <td class="uk-text-bold">${{ number_format(Cart::subtotal(), 2) }}</td>
+                                                    <td class="uk-text-bold">${{ number_format(Cart::subtotal(), 2) }}
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>

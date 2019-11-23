@@ -41,7 +41,7 @@ Route::delete('/suggestion', 'SuggestionController@destroy'); // TODO: falta usa
 
 Route::get('/balance', 'BalanceController@create');
 
-Route::post('/balance', 'BalanceController@show'); // TODO: POST o GET?
+Route::post('/balance', 'BalanceController@show');
 
 // RechargeController
 
@@ -59,7 +59,7 @@ Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');
 
 // WebstoreController
 
-Route::delete('/remove/{id}', 'WebstoreController@removeFromCart');
+Route::delete('/remove', 'WebstoreController@removeFromCart');
 
 Route::post('/add/{id}', 'WebstoreController@addToCart');
 
@@ -74,3 +74,13 @@ Route::get('/status', 'PaypalController@getPaymentStatus');
 // CardController
 
 Route::get('/mycards', 'CardController@create');
+
+// MetroguaguaController
+
+Route::get('/metroguagua', 'MetroguaguaController@create');
+
+// ScheduleController
+
+Route::get('/schedule', 'ScheduleController@create');
+
+Route::get('/search', 'ScheduleController@search');

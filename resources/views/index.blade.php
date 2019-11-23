@@ -40,7 +40,7 @@
                 <div class="box"><i class="fa fa-clock-o icon"></i>
                     <h3 class="name">Horarios</h3>
                     <p class="description">Consulta los horarios de las distintas líneas disponibles en tu parada</p><a
-                        class="learn-more" href="#">Continuar »</a>
+                        class="learn-more" href="/schedule">Continuar »</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
@@ -61,7 +61,7 @@
                 <div class="box"><i class="fa fa-leaf icon"></i>
                     <h3 class="name">La MetroGuagua</h3>
                     <p class="description">La alternativa más sostenible, económica y respetuosa con el medio ambiente.
-                    </p><a class="learn-more" href="#">Continuar »</a>
+                    </p><a class="learn-more" href="/metroguagua">Continuar »</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">

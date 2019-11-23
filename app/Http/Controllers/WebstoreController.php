@@ -16,9 +16,9 @@ class WebstoreController extends Controller
         return redirect('/recharge'); // TODO: change routes
     }
     # Our function for removing a certain product from the cart
-    public function removeFromCart($id)
+    public function removeFromCart(Request $request)
     {
-        \Cart::remove($id);
+        \Cart::remove($request->rowId);
         return redirect('/'); // TODO: change routes
     }
     # Our function for clearing all items from our cart

@@ -8,25 +8,6 @@
 
 @section('body')
 
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script>
-    function getMessage() {
-        $.ajax({
-            type:'POST',
-            url:'/balance',
-            data:{'_token' : '{{ csrf_token() }}', 'id' : $('#id').val()},
-            contentType: 'application/json',
-            dataType: 'JSON',
-            success: function(data) {
-                console.log(data);
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
-</script>
-
 @if ($errors->any())
 <div class="alert alert-danger" style="margin: 0;">
     <ul>
