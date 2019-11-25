@@ -54,7 +54,7 @@
                 <div class="box"><i class="fas fa-hand-holding-heart icon"></i>
                     <h3 class="name">Seguridad-Vial</h3>
                     <p class="description">Conoce las normas del correcto uso del transporte público.</p><a
-                        class="learn-more" href="#">Continuar »</a>
+                        class="learn-more" href="/safety">Continuar »</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">

@@ -47,6 +47,10 @@ Route::post('/balance', 'BalanceController@show');
 
 Route::get('/recharge', 'RechargeController@create');
 
+// SafetyController
+
+Route::get('/safety', 'SafetyController@create');
+
 // ManagementController
 
 Route::get('/management', 'ManagementController@create');
