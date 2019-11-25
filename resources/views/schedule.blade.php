@@ -21,6 +21,10 @@
                         <tr>
                             <th>Line</th>
                             <th>Name</th>
+                            <th>From</th>
+                            <th>Schedule</th>
+                            <th>To</th>
+                            <th>Schedule</th>
                         </tr>
                     </thead>
                     <tbody>

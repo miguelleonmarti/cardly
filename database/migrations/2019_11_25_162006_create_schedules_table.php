@@ -17,6 +17,10 @@ class CreateSchedulesTable extends Migration
             $table->increments('id');
             $table->integer('line')->unique();
             $table->string('name');
+            $table->string('from');
+            $table->string('fromImage');
+            $table->string('to');
+            $table->string('toImage');
             $table->timestamps();
         });
     }

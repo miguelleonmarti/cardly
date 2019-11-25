@@ -15,7 +15,7 @@
 
 Route::get('/', 'PageController@launchIndexView');
 
-// SessionController
+// SessionController: login
 
 Route::get('/login', ['as' => 'login', 'uses' => 'SessionController@create']);
 
@@ -23,19 +23,19 @@ Route::post('/login', 'SessionController@store');
 
 Route::get('/logout', 'SessionController@destroy');
 
-// RegistrationController
+// RegistrationController: register
 
 Route::get('/register', 'RegistrationController@create');
 
-Route::post('/register', 'RegistrationController@store');
+Route::post('/register', 'RegistrationController@store'); // add a user
 
-// SuggestionController
+// SuggestionController: support
 
 Route::get('/suggestion', 'SuggestionController@create');
 
 Route::post('/suggestion', 'SuggestionController@store');
 
-Route::delete('/suggestion', 'SuggestionController@destroy'); // TODO: falta usarlo
+Route::delete('/suggestion', 'SuggestionController@destroy'); // delete suggestion // TODO: falta usarlo
 
 // BalanceController
 
@@ -57,7 +57,7 @@ Route::delete('/type/{id}', 'ManagementController@destroyType');
 
 Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');
 
-// WebstoreController
+// WebstoreController: cart
 
 Route::delete('/remove', 'WebstoreController@removeFromCart');
 

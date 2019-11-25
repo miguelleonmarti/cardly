@@ -22,6 +22,10 @@ class ScheduleController extends Controller
                     $output .= '<tr>' .
                         '<td>' . $schedule->line . '</td>' .
                         '<td>' . $schedule->name . '</td>' .
+                        '<td>' . $schedule->from . '</td>' .
+                        "<td><a href='$schedule->fromImage'>Schedule image</a></td>" .
+                        '<td>' . $schedule->to . '</td>' .
+                        "<td><a href='$schedule->toImage'>Schedule image</a></td>" .
                         '</tr>';
                 }
                 return Response($output);
