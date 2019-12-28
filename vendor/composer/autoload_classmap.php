@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\PaypalController' => $baseDir . '/app/Http/Controllers/PaypalController.php',
     'App\\Http\\Controllers\\RechargeController' => $baseDir . '/app/Http/Controllers/RechargeController.php',
     'App\\Http\\Controllers\\RegistrationController' => $baseDir . '/app/Http/Controllers/RegistrationController.php',
+    'App\\Http\\Controllers\\SafetyController' => $baseDir . '/app/Http/Controllers/SafetyController.php',
     'App\\Http\\Controllers\\ScheduleController' => $baseDir . '/app/Http/Controllers/ScheduleController.php',
     'App\\Http\\Controllers\\SessionController' => $baseDir . '/app/Http/Controllers/SessionController.php',
     'App\\Http\\Controllers\\SuggestionController' => $baseDir . '/app/Http/Controllers/SuggestionController.php',

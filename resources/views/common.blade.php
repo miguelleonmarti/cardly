@@ -116,7 +116,19 @@
                                                         </form>
                                                     </td>
                                                     <td>{{ $cartItem->name }}</td>
-                                                    <td>{{ $cartItem->qty }}</td>
+                                                    <td>
+                                                        <form style="display: inline;" action="/minus/{{$cartItem->id}}/{{$cartItem->rowId}}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <button type="submit">-</button>
+                                                        </form>
+                                                        {{ $cartItem->qty }}
+                                                        <form style="display: inline;" action="/add/{{$cartItem->id}}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <button type="submit">+</button>
+                                                        </form>
+                                                    </td>
                                                     <td>${{ number_format($cartItem->price, 2) }}</td>
                                                     <td>${{ number_format($cartItem->price * $cartItem->qty, 2) }}</td>
                                                 </tr>

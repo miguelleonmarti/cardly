@@ -23,6 +23,7 @@ use URL;
 use App\Invoice;
 use App\Order;
 use App\Suborder;
+use App\Type;
 use Str;
 use Request;
 use Auth;
@@ -157,10 +158,11 @@ class PaypalController extends Controller
             foreach (Cart::content() as $item) {
                 $suborder = new Suborder();
                 $suborder->order_id = $orderId;
-                $suborder->type_id = $item->id; // TODO: here i changed 'product' by 'type'
+                $suborder->type_id = $item->id; // TODO: here I changed 'product' by 'type'
                 $suborder->price = $item->price;
                 $suborder->quantity = $item->qty;
                 $suborder->save();
+
 
                 for ($i = 0; $i < $item->qty; $i++) {
                     $card = new Card();
@@ -169,7 +171,13 @@ class PaypalController extends Controller
                     $card->balance = $item->price;
                     $card->save();
                 }
+
+                // Decrease the stock of purchased products
+                $type = Type::find($item->id);
+                $type['quantity'] -= $item->qty;
+                $type->save();
             }
+
             Cart::destroy();
             Session::put('success', 'Your payment was successful. Thank you.');
             return Redirect::to('/');

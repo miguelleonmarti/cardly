@@ -430,6 +430,7 @@ class ComposerStaticInit60c8dac8cf6e6ffffbeaf802e6ebcb9e
         'App\\Http\\Controllers\\PaypalController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaypalController.php',
         'App\\Http\\Controllers\\RechargeController' => __DIR__ . '/../..' . '/app/Http/Controllers/RechargeController.php',
         'App\\Http\\Controllers\\RegistrationController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistrationController.php',
+        'App\\Http\\Controllers\\SafetyController' => __DIR__ . '/../..' . '/app/Http/Controllers/SafetyController.php',
         'App\\Http\\Controllers\\ScheduleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScheduleController.php',
         'App\\Http\\Controllers\\SessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SessionController.php',
         'App\\Http\\Controllers\\SuggestionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuggestionController.php',

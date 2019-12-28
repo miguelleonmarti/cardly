@@ -20,15 +20,32 @@
                 <h1 class="card-title pricing-card-title">${{ $type->price }}<small class="text-muted">/ mes</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
+                    @if ($type->quantity > 1)
+                    <li>Only <strong>{{ $type->quantity }} items left in stock.</strong></li>
+                    @else
+                    @if ($type->quantity == 1)
+                    <li>Only <strong>1</strong> left in stock.</li>
+                    @else
+                    <li><strong>No cards in stock.</strong></li>
+                    @endif
+                    @endif
+
                     <li>{{ $type->description }}</li>
                 </ul>
+
                 <button type="" class="btn btn-lg btn-outline-primary btn-block align-self-end mt-auto mb-2"
                     data-toggle="modal" data-target="#cardModal{{ $type->id }}">Info</button>
+                @if ($type->quantity > 0)
                 <form action="/add/{{ $type->id }}" method="POST" style="all: unset;">
                     @csrf
                     <button type="submit" class="btn btn-lg btn-outline-primary btn-block align-self-center mt-auto">Add
                         to cart</button>
                 </form>
+                @else
+                <button type="submit" class="btn btn-lg btn-outline-primary btn-block align-self-center mt-auto"
+                    disabled>Add
+                    to cart</button>
+                @endif
             </div>
         </div>
 
