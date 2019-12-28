@@ -4,8 +4,9 @@
 
 @section('body')
 
-</nav><iframe class="border rounded" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/EJi_NvzIKUM"
-    width="100%" height="350"></iframe>
+<!--<iframe class="border rounded" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/EJi_NvzIKUM"
+    width="100%" height="350"></iframe>-->
+
 <div class="article-clean">
     <div class="container">
         <div class="row">
@@ -23,6 +24,9 @@
                         lesiones graves y mortales; así como a la prevención de accidentes que conlleven daños
                         materiales cuando estos puedan afectar de manera
                         significativa a la calidad de vida de las personas.<br></p>
+                        <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EJi_NvzIKUM?rel=0" allowfullscreen></iframe>
+                              </div>
                     <p><br><br>Nuestros&nbsp;<strong>principales ejes estratégicos</strong>&nbsp;son los
                         siguientes:La&nbsp;<strong>educación de niños y jóvenes</strong>&nbsp;en la prevención de
                         lesiones provocadas por siniestros de tránsito, incendios,
