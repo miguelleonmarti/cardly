@@ -6,15 +6,15 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-<div class="container">
+<div class="container m-5">
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Products info </h3>
+                <h3>Schedule information</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <input type="text" class="form-controller" id="search" name="search"></input>
+                    Search your bus line by number: <input type="text" class="form-controller" id="search" name="search"></input>
                 </div>
                 <table class="table table-bordered table-hover">
                     <thead>
@@ -46,6 +46,21 @@
             }
         });
     })
+
+    function first() {
+        $value="";
+        $.ajax({
+            type : 'get',
+            url : '{{URL::to('search')}}',
+            data:{'search':$value},
+            success:function(data){
+                $('tbody').html(data);
+            }
+        });
+    }
+
+    first();
+
 </script>
 
 @endsection
