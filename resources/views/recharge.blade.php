@@ -5,6 +5,25 @@
 @section('body')
 
 @if (isset($types))
+
+<div class="container mt-5">
+    <div class="dropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenu"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by:
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <a class="dropdown-item" href="/recharge/price/asc">Price: Low to High</a>
+            <a class="dropdown-item" href="/recharge/price/desc">Price: High to Low</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/recharge/created_at/asc">Newest Arrivals</a>
+            <a class="dropdown-item" href="/recharge/created_at/desc">Oldest Arrivals</a>
+        </div>
+
+    </div>
+</div>
+
 @foreach ($types->chunk(3) as $chunk)
 <!-- Number of rows -->
 

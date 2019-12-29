@@ -83,7 +83,8 @@
                 let centerCoords = {lat: 28.071354, lng: -15.453343};
                 let map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 18,
-                    center: centerCoords
+                    center: centerCoords,
+                    mapTypeId: 'satellite'
                 });
                 let locations = [
                     ['Aparcamiento EITE', 28.07079, -15.455199],

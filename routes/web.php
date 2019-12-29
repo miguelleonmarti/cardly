@@ -45,7 +45,7 @@ Route::post('/balance', 'BalanceController@show');
 
 // RechargeController
 
-Route::get('/recharge', 'RechargeController@create');
+Route::get('/recharge/{key}/{sort}', 'RechargeController@create');
 
 // SafetyController
 
