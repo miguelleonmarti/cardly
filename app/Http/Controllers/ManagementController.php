@@ -31,8 +31,34 @@ class ManagementController extends Controller
         return redirect()->to('/management');
     }
 
+    public function addType(Request $request) {
+
+        $this->validate(request(), [
+            'name' => 'required',
+            'description' => 'required',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric',
+            'image' => 'required'
+        ]);
+
+        Type::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'quantity' => $request->quantity,
+            'price' => $request->price,
+            'image' => $request->image
+        ]);
+
+        return redirect()->to('/management');
+    }
+
     public function destroyType($id) {
         Type::destroy($id);
+        return redirect()->to('/management');
+    }
+
+    public function updateType($id) {
+
         return redirect()->to('/management');
     }
 

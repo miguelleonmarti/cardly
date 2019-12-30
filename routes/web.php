@@ -59,6 +59,10 @@ Route::delete('/user/{id}', 'ManagementController@destroyUser');
 
 Route::delete('/type/{id}', 'ManagementController@destroyType');
 
+Route::post('/type', 'ManagementController@addType');
+
+Route::put('/type/{id}', 'ManagementController@updateType');
+
 Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');
 
 // WebstoreController: cart
