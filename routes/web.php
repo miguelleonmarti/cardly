@@ -61,7 +61,9 @@ Route::delete('/type/{id}', 'ManagementController@destroyType');
 
 Route::post('/type', 'ManagementController@addType');
 
-Route::put('/type/{id}', 'ManagementController@updateType');
+Route::put('/type/{id}', 'ManagementController@updateType'); // updates the card type
+
+Route::get('/update/{id}', 'ManagementController@createUpdate'); // create the view
 
 Route::delete('/suggestion/{id}', 'ManagementController@destroySuggestion');
 
@@ -94,3 +96,4 @@ Route::get('/metroguagua', 'MetroguaguaController@create');
 Route::get('/schedule', 'ScheduleController@create');
 
 Route::get('/search', 'ScheduleController@search');
+

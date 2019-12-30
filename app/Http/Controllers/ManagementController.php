@@ -26,12 +26,20 @@ class ManagementController extends Controller
             ->with('suggestions', $suggestions);
     }
 
-    public function destroyUser($id) {
+    public function createUpdate($id)
+    {
+        $type = Type::where('id', $id)->first();
+        return view('update')->with('type', $type);
+    }
+
+    public function destroyUser($id)
+    {
         User::destroy($id);
         return redirect()->to('/management');
     }
 
-    public function addType(Request $request) {
+    public function addType(Request $request)
+    {
 
         $this->validate(request(), [
             'name' => 'required',
@@ -52,19 +60,36 @@ class ManagementController extends Controller
         return redirect()->to('/management');
     }
 
-    public function destroyType($id) {
+    public function destroyType($id)
+    {
         Type::destroy($id);
         return redirect()->to('/management');
     }
 
-    public function updateType($id) {
+    public function updateType($id, Request $request)
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'description' => 'required',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric',
+            'image' => 'required'
+        ]);
+
+        Type::find($id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'quantity' => $request->quantity,
+            'price' => $request->price,
+            'image' => $request->image
+        ]);
 
         return redirect()->to('/management');
     }
 
-    public function destroySuggestion($id) {
+    public function destroySuggestion($id)
+    {
         Suggestion::destroy($id);
         return redirect()->to('/management');
     }
-
 }
