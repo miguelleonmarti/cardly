@@ -23,7 +23,7 @@ class WebstoreController extends Controller
             \Cart::add($type->id, $type->name, 1, $type->price);
         }
 
-        return redirect('/recharge'); // TODO: change routes
+        return redirect('/recharge/price/asc'); // TODO: change routes
     }
 
     public function minus($id, $rowId) {
@@ -41,7 +41,7 @@ class WebstoreController extends Controller
             \Cart::add($type->id, $type->name, -1, $type->price);
         }
 
-        return redirect('/recharge');
+        return redirect('/recharge/price/asc');
     }
 
     # Our function for removing a certain product from the cart
