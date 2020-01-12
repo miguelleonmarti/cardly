@@ -125,6 +125,28 @@
         </section>
     </div>
 
+    <div class="text-center">
+        <header class="border rounded">
+            <h3>Invoices list</h3>
+        </header>
+        <section>
+            @if (isset($invoices))
+            @foreach ($invoices as $invoice)
+            <article class="border rounded border-dark" style="margin-bottom: 10px;">
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Customer email: {{ $invoice->customer_email }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Customed ID: {{ $invoice->customer_id }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Country code: {{ $invoice->country_code }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Payment ID: {{ $invoice->payment_id }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Payment status: {{ $invoice->payment_status }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Price: {{ $invoice->price }} {{ $invoice->currency }}</p>
+                <p class="text-left" style="margin: 10px;margin-bottom: 10px;">Date: {{ $invoice->created_at }}<br>
+                </p>
+            </article>
+            @endforeach
+            @endif
+        </section>
+    </div>
+
 </div>
 
 @endif

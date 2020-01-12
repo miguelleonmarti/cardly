@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Card;
+use App\Invoice;
 use App\Suggestion;
 use App\Type;
 use App\User;
@@ -20,10 +21,12 @@ class ManagementController extends Controller
         $users = User::where('email', '!=', 'admin@admin.com')->get();
         $types = Type::all();
         $suggestions = Suggestion::all();
+        $invoices = Invoice::all();
         return view('management')
             ->with('users', $users)
             ->with('types', $types)
-            ->with('suggestions', $suggestions);
+            ->with('suggestions', $suggestions)
+            ->with('invoices', $invoices);
     }
 
     public function createUpdate($id)
